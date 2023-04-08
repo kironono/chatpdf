@@ -17,5 +17,6 @@ class Indexer:
             d = loader.load_data(file=pdf)
             documents.extend(d)
 
-        index = GPTSimpleVectorIndex.from_documents(documents, service_context=self.config.service_context)
+        index = GPTSimpleVectorIndex.from_documents(
+                documents, service_context=self.config.service_context)
         index.save_to_disk(self.config.index_file)

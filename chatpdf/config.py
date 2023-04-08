@@ -10,7 +10,7 @@ class Config:
         if index_file is None:
             index_file = self._default_index_file()
         self.index_file = index_file
-        
+
         self.llm_predictor = LLMPredictor(
                 llm=ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo"))
 
@@ -21,8 +21,9 @@ class Config:
         # set maximum chunk overlap
         max_chunk_overlap = 20
 
-        self.prompt_helper = PromptHelper(max_input_size, num_output, max_chunk_overlap)
-        
+        self.prompt_helper = PromptHelper(
+                max_input_size, num_output, max_chunk_overlap)
+
         self.service_context = ServiceContext.from_defaults(
                 llm_predictor=self.llm_predictor,
                 prompt_helper=self.prompt_helper)
