@@ -1,8 +1,9 @@
 [tool.poetry]
 name = "chatpdf"
 version = "0.1.0"
-description = ""
+description = "Answer questions in chat based on your own PDF documents."
 authors = ["Junichi Kakisako <kilo.sw@gmail.com>"]
+readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
